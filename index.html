@@ -320,13 +320,9 @@
   </div>
 
   <!-- Script JavaScript personnalisé -->
- <style>
-  .resume-section:not(#about) {
-    position: absolute;
-    top: 100%;
-    left: 0;
+<style>
+  .resume-section.hidden {
     display: none;
-    width: 100%;
   }
 </style>
 
@@ -355,13 +351,13 @@
       if (targetSection !== activeSection) {
         // Masquer la section active actuelle (si elle existe)
         if (activeSection !== null) {
-          activeSection.style.display = 'none';
+          activeSection.classList.add('hidden');
         }
 
         sections.forEach(function (section) {
           if (section.id === targetSection) {
             // Afficher la section cible
-            section.style.display = 'block';
+            section.classList.remove('hidden');
             // Mettre à jour la section active
             activeSection = section;
           }
