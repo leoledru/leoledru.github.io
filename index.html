@@ -11,15 +11,15 @@
   <title>Resume - Léo Ledru</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
+   <!-- <link href="css/resume.min.css" rel="stylesheet"> -->
 
 </head>
 <!-- Background -->
@@ -41,19 +41,19 @@
           <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-target="skills" href="#skills">Skills</a>
+          <a class="nav-link" href="#skills">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-target="publications" href="#publications">Publications</a>
+          <a class="nav-link" href="#publications">Publications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-target="experience" href="#experience">Experience</a>
+          <a class="nav-link" href="#experience">Experience</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-target="education" href="#education">Education</a>
+          <a class="nav-link" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-target="interests" href="#interests">Other Interests</a>
+          <a class="nav-link" href="#interests">Other Interests</a>
         </li>
       </ul>
     </div>
@@ -320,63 +320,33 @@
   </div>
 
  <!-- Script JavaScript personnalisé -->
- <script>
-  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  var sections = document.querySelectorAll('.resume-section');
-  var container = document.querySelector('.container-fluid');
-  var aboutSection = document.getElementById('about');
-  var activeSection = null;
-
-  // Masquer toutes les sections sauf "About" initialement
-  sections.forEach(function (section) {
-    if (section !== aboutSection) {
-      section.querySelector('div').style.display = 'none';
-    }
-  });
-
-  // Fonction pour ajuster la hauteur du conteneur principal
-  function adjustContainerHeight() {
-    var totalHeight = aboutSection.offsetHeight;
-    if (activeSection !== null) {
-      totalHeight += activeSection.offsetHeight;
-    }
-    container.style.height = totalHeight + 'px';
-  }
-
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      var targetSection = link.getAttribute('data-target');
-
-      // Vérifier si la section cible est différente de la section active actuelle
-      if (targetSection !== activeSection) {
-        // Masquer la section active actuelle (si elle existe)
-        if (activeSection !== null) {
-          activeSection.querySelector('div').style.display = 'none';
+ <!-- Script JavaScript -->
+  <script>
+    // Fonction pour afficher la section cible et masquer les autres sections
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        if (section.id === sectionId) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
         }
+      });
+      // Faire défiler la page jusqu'à la section cible
+      const targetSection = document.getElementById(sectionId);
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-        sections.forEach(function (section) {
-          var div = section.querySelector('div');
-          if (section.id === targetSection) {
-            // Afficher la section cible
-            div.style.display = 'block';
-            // Mettre à jour la section active
-            activeSection = section;
-          }
-        });
-
-        // Ajuster la hauteur du conteneur principal
-        adjustContainerHeight();
-      }
-
-      // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
-      if (targetSection !== 'about') {
-        var targetContent = document.getElementById(targetSection);
-        targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    // Écouteurs d'événements pour les clics sur les liens de la barre de navigation
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const sectionId = link.getAttribute('href').substring(1);
+        showSection(sectionId);
+      });
     });
-  });
-</script>
+  </script>
   
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
