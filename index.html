@@ -79,7 +79,7 @@
     </section>
   </div>
   
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills"> <!-- style="display: none;" -->
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Skills </span> </h2>
 
@@ -130,7 +130,7 @@
       </div>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications"> <!-- style="display: none;" -->
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Publications </span> </h2>
         
@@ -182,7 +182,7 @@
         
   <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience"> <!-- style="display: none;" -->
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Experience </span> </h2>
 
@@ -239,7 +239,7 @@
   
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education"> <!-- style="display: none;" -->
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Education </span> </h2>
         
@@ -292,7 +292,7 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests"> <!-- style="display: none;" -->
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Other Interests </span> </h2> 
         
@@ -320,7 +320,7 @@
     <hr class="m-0">
 
   <!-- Script JavaScript personnalisé -->
- <script>
+<script>
   var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   var sections = document.querySelectorAll('.resume-section');
   var container = document.querySelector('.container-fluid');
@@ -330,7 +330,7 @@
   // Masquer toutes les sections sauf "About" initialement
   sections.forEach(function (section) {
     if (section !== aboutSection) {
-      section.querySelector('div').style.display = 'none';
+      section.classList.add('d-none');
     }
   });
 
@@ -352,14 +352,13 @@
       if (targetSection !== activeSection) {
         // Masquer la section active actuelle (si elle existe)
         if (activeSection !== null) {
-          activeSection.querySelector('div').style.display = 'none';
+          activeSection.classList.add('d-none');
         }
 
         sections.forEach(function (section) {
-          var div = section.querySelector('div');
           if (section.id === targetSection) {
             // Afficher la section cible
-            div.style.display = 'block';
+            section.classList.remove('d-none');
             // Mettre à jour la section active
             activeSection = section;
           }
