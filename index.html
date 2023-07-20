@@ -53,13 +53,13 @@
           <a class="nav-link" data-target="education" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-target="interestes" href="#interests">Other Interests</a>
+          <a class="nav-link" data-target="interests" href="#interests">Other Interests</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- <div class="container-fluid p-0"> -->
+  <div class="container-fluid p-0">
     <!-- Head -->
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
@@ -318,7 +318,7 @@
 
     <hr class="m-0">
 
- <!-- </div> -->
+ </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -331,32 +331,31 @@
   <script src="js/resume.min.js"></script>
 
   <script>
-    // Utilisez JavaScript pour gérer l'affichage du contenu lorsque l'utilisateur clique sur un onglet
     var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    var sections = document.querySelectorAll('.resume-section');
+    var container = document.querySelector('.container-fluid');
+
     navLinks.forEach(function (link) {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         var targetSection = link.getAttribute('data-target');
-        var targetContent = document.getElementById(targetSection);
 
-        if (targetContent) {
-          // Afficher le contenu de la section cible
-          targetContent.style.display = 'block';
-
-          // Masquer les autres contenus
-          var otherContents = document.querySelectorAll('[id^="' + targetSection + '"]:not(#' + targetSection + ')');
-          otherContents.forEach(function (content) {
-            content.style.display = 'none';
-          });
-
-          // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur de la section affichée
-          var container = document.querySelector('.container-fluid');
-          container.style.height = targetContent.offsetHeight + 'px';
-
-          // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
-          if (targetSection !== 'about') {
-            targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        sections.forEach(function (section) {
+          if (section.id === targetSection) {
+            // Afficher la section cible
+            section.style.display = 'block';
+            // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur de la section affichée
+            container.style.height = section.offsetHeight + 'px';
+          } else {
+            // Cacher les autres sections
+            section.style.display = 'none';
           }
+        });
+
+        // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
+        if (targetSection !== 'about') {
+          var targetContent = document.getElementById(targetSection);
+          targetContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       });
     });
