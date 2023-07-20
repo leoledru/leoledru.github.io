@@ -78,8 +78,8 @@
           </p>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center">
-      <div class="w-100" id="skills" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills" style="display: none;">
+      <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Skills </span> </h2>
 
         <div class="subheading mb-3"> <span style="color: #ffffff">Programming Languages &amp; Tools </span> </div>
@@ -129,8 +129,8 @@
       </div>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center">
-      <div class="w-100" id="publications" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications" style="display: none;">
+      <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Publications </span> </h2>
         
       <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -181,8 +181,8 @@
         
   <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center">
-      <div class="w-100" id="experience" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience" style="display: none;">
+      <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Experience </span> </h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -238,8 +238,8 @@
   
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center">
-      <div class="w-100" id="education" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education" style="display: none;">
+      <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Education </span> </h2>
         
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -291,8 +291,8 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center">
-      <div class="w-100" id="interests" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests" style="display: none;">
+      <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Other Interests </span> </h2> 
         
         <h3 class="mb-0"> <span style="color: #ffffff">Popularization of science </span> </h3>
@@ -330,7 +330,7 @@
     // Masquer toutes les sections sauf "About" initialement
     sections.forEach(function (section) {
       if (section.id !== 'about') {
-        section.style.display = 'none';
+        section.querySelector('div').style.display = 'none';
       }
     });
 
@@ -342,14 +342,15 @@
         // Vérifier si la section cible est différente de la section active actuelle
         if (targetSection !== activeSection) {
           sections.forEach(function (section) {
+            var div = section.querySelector('div');
             if (section.id === 'about' || section.id === targetSection) {
               // Afficher la section "About" et la section cible
-              section.style.display = 'block';
+              div.style.display = 'block';
               // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur des deux sections affichées
               container.style.height = section.offsetHeight + 'px';
             } else {
               // Cacher les autres sections
-              section.style.display = 'none';
+              div.style.display = 'none';
             }
           });
 
