@@ -358,7 +358,7 @@
         // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
         if (targetSection !== 'about') {
           var targetContent = document.getElementById(targetSection);
-          targetContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetContent.scrollIntoView({ behavior: 'smooth', block: 'top' });
         }
       });
     });
