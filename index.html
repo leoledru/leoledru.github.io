@@ -341,15 +341,10 @@
 
         if (targetContent) {
           // Afficher le contenu de la section cible
-          if (targetContent.style.display === 'none') {
-            targetContent.style.display = 'block';
-          } else {
-            // Masquer le contenu de la section cible
-            targetContent.style.display = 'none';
-          }
+          targetContent.style.display = 'block';
 
           // Masquer les autres contenus
-          var otherContents = document.querySelectorAll('[id^="content_"]:not(#' + targetSection + ')');
+          var otherContents = document.querySelectorAll('[id^="' + targetSection + '"]:not(#' + targetSection + ')');
           otherContents.forEach(function (content) {
             content.style.display = 'none';
           });
@@ -364,7 +359,6 @@
       });
     });
   </script>
-
 
 </body>
 
