@@ -78,7 +78,7 @@
           </p>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Skills </span> </h2>
 
@@ -129,7 +129,7 @@
       </div>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Publications </span> </h2>
         
@@ -181,7 +181,7 @@
         
   <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Experience </span> </h2>
 
@@ -238,7 +238,7 @@
   
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Education </span> </h2>
         
@@ -291,7 +291,7 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests" style="display: none;">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Other Interests </span> </h2> 
         
@@ -335,6 +335,13 @@
     var sections = document.querySelectorAll('.resume-section');
     var container = document.querySelector('.container-fluid');
 
+    // Masquer toutes les sections sauf "About" initialement
+    sections.forEach(function (section) {
+      if (section.id !== 'about') {
+        section.style.display = 'none';
+      }
+    });
+
     navLinks.forEach(function (link) {
       link.addEventListener('click', function (event) {
         event.preventDefault();
@@ -357,11 +364,10 @@
 
         // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
         var targetContent = document.getElementById(targetSection);
-        targetContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
-
 </body>
 
 </html>
