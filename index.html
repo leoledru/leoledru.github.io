@@ -319,19 +319,20 @@
     <hr class="m-0">
   </div>
 
-  <!-- Script JavaScript personnalisé -->
-<style>
-  .resume-section.hidden {
-    display: none;
-  }
-</style>
-
-<script>
+ <!-- Script JavaScript personnalisé -->
+ <script>
   var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   var sections = document.querySelectorAll('.resume-section');
   var container = document.querySelector('.container-fluid');
   var aboutSection = document.getElementById('about');
   var activeSection = null;
+
+  // Masquer toutes les sections sauf "About" initialement
+  sections.forEach(function (section) {
+    if (section !== aboutSection) {
+      section.querySelector('div').style.display = 'none';
+    }
+  });
 
   // Fonction pour ajuster la hauteur du conteneur principal
   function adjustContainerHeight() {
@@ -351,13 +352,14 @@
       if (targetSection !== activeSection) {
         // Masquer la section active actuelle (si elle existe)
         if (activeSection !== null) {
-          activeSection.classList.add('hidden');
+          activeSection.querySelector('div').style.display = 'none';
         }
 
         sections.forEach(function (section) {
+          var div = section.querySelector('div');
           if (section.id === targetSection) {
             // Afficher la section cible
-            section.classList.remove('hidden');
+            div.style.display = 'block';
             // Mettre à jour la section active
             activeSection = section;
           }
