@@ -320,19 +320,22 @@
     <hr class="m-0">
 
   <!-- Script JavaScript personnalisé -->
- <script>
+ <style>
+  .resume-section:not(#about) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 100%;
+  }
+</style>
+
+<script>
   var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   var sections = document.querySelectorAll('.resume-section');
   var container = document.querySelector('.container-fluid');
   var aboutSection = document.getElementById('about');
   var activeSection = null;
-
-  // Masquer toutes les sections sauf "About" initialement
-  sections.forEach(function (section) {
-    if (section !== aboutSection) {
-      section.querySelector('div').style.visibility = 'hidden';
-    }
-  });
 
   // Fonction pour ajuster la hauteur du conteneur principal
   function adjustContainerHeight() {
@@ -352,14 +355,13 @@
       if (targetSection !== activeSection) {
         // Masquer la section active actuelle (si elle existe)
         if (activeSection !== null) {
-          activeSection.querySelector('div').style.visibility = 'hidden';
+          activeSection.style.display = 'none';
         }
 
         sections.forEach(function (section) {
-          var div = section.querySelector('div');
           if (section.id === targetSection) {
             // Afficher la section cible
-            div.style.visibility = 'visible';
+            section.style.display = 'block';
             // Mettre à jour la section active
             activeSection = section;
           }
