@@ -320,32 +320,64 @@
   </div>
 
  <!-- Script JavaScript personnalisé -->
-  <!-- <script>
-    // Fonction pour afficher la section cible et masquer les autres sections
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        if (section.id === sectionId) {
-          section.classList.add('active');
-        } else {
-          section.classList.remove('active');
-        }
-      });
-      // Faire défiler la page jusqu'à la section cible
-      const targetSection = document.getElementById(sectionId);
-      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  <!-- Script JavaScript personnalisé -->
+ <script>
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  var sections = document.querySelectorAll('.resume-section');
+  var container = document.querySelector('.container-fluid');
+  var aboutSection = document.getElementById('about');
+  var activeSection = null;
 
-    // Écouteurs d'événements pour les clics sur les liens de la barre de navigation
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        const sectionId = link.getAttribute('href').substring(1);
-        showSection(sectionId);
-      });
+  // Masquer toutes les sections sauf "About" initialement
+  sections.forEach(function (section) {
+    if (section !== aboutSection) {
+      section.querySelector('div').style.display = 'none';
+    }
+  });
+
+  // Fonction pour ajuster la hauteur du conteneur principal
+  function adjustContainerHeight() {
+    var totalHeight = aboutSection.offsetHeight;
+    if (activeSection !== null) {
+      totalHeight += activeSection.offsetHeight;
+    }
+    container.style.height = totalHeight + 'px';
+  }
+
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var targetSection = link.getAttribute('data-target');
+
+      // Vérifier si la section cible est différente de la section active actuelle
+      if (targetSection !== activeSection) {
+        // Masquer la section active actuelle (si elle existe)
+        if (activeSection !== null) {
+          activeSection.querySelector('div').style.display = 'none';
+        }
+
+        sections.forEach(function (section) {
+          var div = section.querySelector('div');
+          if (section.id === targetSection) {
+            // Afficher la section cible
+            div.style.display = 'block';
+            // Mettre à jour la section active
+            activeSection = section;
+          }
+        });
+
+        // Ajuster la hauteur du conteneur principal
+        adjustContainerHeight();
+      }
+
+      // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
+      if (targetSection !== 'about') {
+        var targetContent = document.getElementById(targetSection);
+        targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
-  </script> -->
+  });
+</script>
   
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
