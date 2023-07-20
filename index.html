@@ -338,7 +338,7 @@
     // Masquer toutes les sections sauf "About" initialement
     sections.forEach(function (section) {
       if (section.id !== 'about') {
-        section.style.display = 'none';
+        section.classList.add('d-none');
       }
     });
 
@@ -350,15 +350,15 @@
         sections.forEach(function (section) {
           if (section.id === 'about') {
             // La section "About" doit toujours être affichée
-            section.style.display = 'block';
+            section.classList.remove('d-none');
           } else if (section.id === targetSection) {
             // Afficher la section cible
-            section.style.display = 'block';
+            section.classList.remove('d-none');
             // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur de la section affichée
             container.style.height = section.offsetHeight + 'px';
           } else {
             // Cacher les autres sections
-            section.style.display = 'none';
+            section.classList.add('d-none');
           }
         });
 
@@ -368,6 +368,7 @@
       });
     });
   </script>
+  
 </body>
 
 </html>
