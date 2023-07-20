@@ -319,7 +319,7 @@
 
     <hr class="m-0">
 
-  <!-- Script JavaScript personnalisé -->
+<!-- Script JavaScript personnalisé -->
 <script>
   var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   var sections = document.querySelectorAll('.resume-section');
@@ -330,7 +330,7 @@
   // Masquer toutes les sections sauf "About" initialement
   sections.forEach(function (section) {
     if (section !== aboutSection) {
-      section.classList.add('d-none');
+      section.classList.add('d-none'); // Add the "d-none" class to hide the section
     }
   });
 
@@ -352,13 +352,13 @@
       if (targetSection !== activeSection) {
         // Masquer la section active actuelle (si elle existe)
         if (activeSection !== null) {
-          activeSection.classList.add('d-none');
+          activeSection.classList.add('d-none'); // Hide the active section
         }
 
         sections.forEach(function (section) {
           if (section.id === targetSection) {
             // Afficher la section cible
-            section.classList.remove('d-none');
+            section.classList.remove('d-none'); // Display the target section
             // Mettre à jour la section active
             activeSection = section;
           }
@@ -376,7 +376,7 @@
     });
   });
 </script>
-  
+
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
   <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
