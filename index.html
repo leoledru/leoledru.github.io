@@ -321,19 +321,21 @@
  </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
 
   <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
+  <!-- <script src="js/resume.min.js"></script> -->
 
+  <!-- Script JavaScript personnalisé -->
   <script>
     var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     var sections = document.querySelectorAll('.resume-section');
     var container = document.querySelector('.container-fluid');
+    var activeSection = 'about'; // La section "About" est active par défaut
 
     // Masquer toutes les sections sauf "About" initialement
     sections.forEach(function (section) {
@@ -347,20 +349,23 @@
         event.preventDefault();
         var targetSection = link.getAttribute('data-target');
 
-        sections.forEach(function (section) {
-          if (section.id === 'about') {
-            // La section "About" doit toujours être affichée
-            section.classList.remove('d-none');
-          } else if (section.id === targetSection) {
-            // Afficher la section cible
-            section.classList.remove('d-none');
-            // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur de la section affichée
-            container.style.height = section.offsetHeight + 'px';
-          } else {
-            // Cacher les autres sections
-            section.classList.add('d-none');
-          }
-        });
+        // Vérifier si la section cible est différente de la section active actuelle
+        if (targetSection !== activeSection) {
+          sections.forEach(function (section) {
+            if (section.id === 'about' || section.id === targetSection) {
+              // Afficher la section "About" et la section cible
+              section.classList.remove('d-none');
+              // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur des deux sections affichées
+              container.style.height = section.offsetHeight + 'px';
+            } else {
+              // Cacher les autres sections
+              section.classList.add('d-none');
+            }
+          });
+
+          // Mettre à jour la section active
+          activeSection = targetSection;
+        }
 
         // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
         var targetContent = document.getElementById(targetSection);
