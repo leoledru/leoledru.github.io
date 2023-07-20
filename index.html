@@ -353,10 +353,18 @@
           otherContents.forEach(function (content) {
             content.style.display = 'none';
           });
+
+          // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur de la section affichée
+          var container = document.querySelector('.container-fluid');
+          container.style.height = targetContent.offsetHeight + 'px';
+
+          // Faire défiler la page jusqu'à la section cible
+          targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
   </script>
+
 
 </body>
 
