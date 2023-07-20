@@ -327,13 +327,6 @@
   var aboutSection = document.getElementById('about');
   var activeSection = null;
 
-  // Masquer toutes les sections sauf "About" initialement
-  sections.forEach(function (section) {
-    if (section !== aboutSection) {
-      section.classList.add('d-none'); // Add the "d-none" class to hide the section
-    }
-  });
-
   // Fonction pour ajuster la hauteur du conteneur principal
   function adjustContainerHeight() {
     var totalHeight = aboutSection.offsetHeight;
@@ -352,15 +345,17 @@
       if (targetSection !== activeSection) {
         // Masquer la section active actuelle (si elle existe)
         if (activeSection !== null) {
-          activeSection.classList.add('d-none'); // Hide the active section
+          activeSection.style.display = 'none'; // Hide the active section
         }
 
         sections.forEach(function (section) {
           if (section.id === targetSection) {
             // Afficher la section cible
-            section.classList.remove('d-none'); // Display the target section
+            section.style.display = 'block'; // Display the target section
             // Mettre à jour la section active
             activeSection = section;
+          } else {
+            section.style.display = 'none'; // Hide other sections
           }
         });
 
@@ -376,6 +371,7 @@
     });
   });
 </script>
+
 
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
