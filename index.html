@@ -321,48 +321,62 @@
 
   <!-- Script JavaScript personnalisé -->
  <script>
-    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    var sections = document.querySelectorAll('.resume-section');
-    var container = document.querySelector('.container-fluid');
-    var activeSection = 'about'; // La section "About" est active par défaut
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  var sections = document.querySelectorAll('.resume-section');
+  var container = document.querySelector('.container-fluid');
+  var aboutSection = document.getElementById('about');
+  var activeSection = null;
 
-    // Masquer toutes les sections sauf "About" initialement
-    sections.forEach(function (section) {
-      if (section.id !== 'about') {
-        section.querySelector('div').style.display = 'none';
-      }
-    });
+  // Masquer toutes les sections sauf "About" initialement
+  sections.forEach(function (section) {
+    if (section !== aboutSection) {
+      section.querySelector('div').style.display = 'none';
+    }
+  });
 
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var targetSection = link.getAttribute('data-target');
+  // Fonction pour ajuster la hauteur du conteneur principal
+  function adjustContainerHeight() {
+    var totalHeight = aboutSection.offsetHeight;
+    if (activeSection !== null) {
+      totalHeight += activeSection.offsetHeight;
+    }
+    container.style.height = totalHeight + 'px';
+  }
 
-        // Vérifier si la section cible est différente de la section active actuelle
-        if (targetSection !== activeSection) {
-          sections.forEach(function (section) {
-            var div = section.querySelector('div');
-            if (section.id === 'about' || section.id === targetSection) {
-              // Afficher la section "About" et la section cible
-              div.style.display = 'block';
-              // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur des deux sections affichées
-              container.style.height = section.offsetHeight + 'px';
-            } else {
-              // Cacher les autres sections
-              div.style.display = 'none';
-            }
-          });
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var targetSection = link.getAttribute('data-target');
 
-          // Mettre à jour la section active
-          activeSection = targetSection;
+      // Vérifier si la section cible est différente de la section active actuelle
+      if (targetSection !== activeSection) {
+        // Masquer la section active actuelle (si elle existe)
+        if (activeSection !== null) {
+          activeSection.querySelector('div').style.display = 'none';
         }
 
-        // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
+        sections.forEach(function (section) {
+          var div = section.querySelector('div');
+          if (section.id === targetSection) {
+            // Afficher la section cible
+            div.style.display = 'block';
+            // Mettre à jour la section active
+            activeSection = section;
+          }
+        });
+
+        // Ajuster la hauteur du conteneur principal
+        adjustContainerHeight();
+      }
+
+      // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
+      if (targetSection !== 'about') {
         var targetContent = document.getElementById(targetSection);
         targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+      }
     });
-  </script>
+  });
+</script>
   
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
