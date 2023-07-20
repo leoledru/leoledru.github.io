@@ -41,19 +41,19 @@
           <a class="nav-link js-scroll-trigger" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          <a class="nav-link js-scroll-trigger" data-target="SkillsTab" href="#skills">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+          <a class="nav-link js-scroll-trigger" data-target="PublicationsTab" href="#publications">Publications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          <a class="nav-link js-scroll-trigger" data-target="ExperienceTab" href="#experience">Experience</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          <a class="nav-link js-scroll-trigger" data-target="EducationTab" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" id="OtherTab" href="#interests">Other Interests</a>
+          <a class="nav-link js-scroll-trigger" data-target="OtherTab" href="#interests">Other Interests</a>
         </li>
       </ul>
     </div>
@@ -78,8 +78,8 @@
           </p>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" >
+      <div class="w-100" id="skills" style="display: none;">
         <h2 class="mb-5"> <span style="color: #ffffff">Skills </span> </h2>
 
         <div class="subheading mb-3"> <span style="color: #ffffff">Programming Languages &amp; Tools </span> </div>
@@ -129,8 +129,8 @@
       </div>
     </section>
       
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications">
-      <div class="w-100">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" >
+      <div class="w-100" id="publications" style="display: none;">
         <h2 class="mb-5"> <span style="color: #ffffff">Publications </span> </h2>
         
       <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -181,8 +181,8 @@
         
   <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" >
+      <div class="w-100" id="experience" style="display: none;">
         <h2 class="mb-5"> <span style="color: #ffffff">Experience </span> </h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -238,8 +238,8 @@
   
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" >
+      <div class="w-100" id="education" style="display: none;">
         <h2 class="mb-5"> <span style="color: #ffffff">Education </span> </h2>
         
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -331,17 +331,30 @@
   <script src="js/resume.min.js"></script>
 
   <script>
-    // Utilisez JavaScript pour gérer l'affichage du contenu lorsque l'onglet "CV" est cliqué
-    document.getElementById('OtherTab').addEventListener('click', function () {
-      // Récupérez la div avec l'identifiant "cvContent"
-      var cvContent = document.getElementById('interests');
-      // Si la div est actuellement masquée, affichez-la
-      if (cvContent.style.display === 'none') {
-        cvContent.style.display = 'block';
-      } else {
-        // Sinon, masquez-la
-        cvContent.style.display = 'none';
-      }
+    // Utilisez JavaScript pour gérer l'affichage du contenu lorsque l'utilisateur clique sur un onglet
+    var navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        var targetSection = link.getAttribute('data-target');
+        var targetContent = document.getElementById(targetSection);
+
+        if (targetContent) {
+          // Afficher le contenu de la section cible
+          if (targetContent.style.display === 'none') {
+            targetContent.style.display = 'block';
+          } else {
+            // Masquer le contenu de la section cible
+            targetContent.style.display = 'none';
+          }
+
+          // Masquer les autres contenus
+          var otherContents = document.querySelectorAll('[id^="content_"]:not(#' + targetSection + ')');
+          otherContents.forEach(function (content) {
+            content.style.display = 'none';
+          });
+        }
+      });
     });
   </script>
 
