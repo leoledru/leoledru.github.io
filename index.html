@@ -77,7 +77,8 @@
           Indeed, I appreciate both theoretical issues and modelling techniques.
           </p>
     </section>
-      
+  </div>
+  
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills" style="display: none;">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Skills </span> </h2>
@@ -318,19 +319,27 @@
 
     <hr class="m-0">
 
- </div>
-
   <!-- Script JavaScript personnalisé -->
  <script>
     var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     var sections = document.querySelectorAll('.resume-section');
-    var container = document.querySelector('.container-fluid');
-    var activeSection = 'about'; // La section "About" est active par défaut
+    var aboutSection = document.getElementById('about');
+    var activeSection = null;
+
+    // Fonction pour masquer une section
+    function hideSection(section) {
+      section.style.display = 'none';
+    }
+
+    // Fonction pour afficher une section
+    function showSection(section) {
+      section.style.display = 'block';
+    }
 
     // Masquer toutes les sections sauf "About" initialement
     sections.forEach(function (section) {
-      if (section.id !== 'about') {
-        section.querySelector('div').style.display = 'none';
+      if (section !== aboutSection) {
+        hideSection(section);
       }
     });
 
@@ -341,26 +350,26 @@
 
         // Vérifier si la section cible est différente de la section active actuelle
         if (targetSection !== activeSection) {
+          // Masquer la section active actuelle (si elle existe)
+          if (activeSection !== null) {
+            hideSection(activeSection);
+          }
+
           sections.forEach(function (section) {
-            var div = section.querySelector('div');
-            if (section.id === 'about' || section.id === targetSection) {
-              // Afficher la section "About" et la section cible
-              div.style.display = 'block';
-              // Ajuster la hauteur du conteneur principal pour qu'il corresponde à la hauteur des deux sections affichées
-              container.style.height = section.offsetHeight + 'px';
-            } else {
-              // Cacher les autres sections
-              div.style.display = 'none';
+            if (section.id === targetSection) {
+              // Afficher la section cible
+              showSection(section);
+              // Mettre à jour la section active
+              activeSection = section;
             }
           });
 
-          // Mettre à jour la section active
-          activeSection = targetSection;
+          // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
+          if (targetSection !== 'about') {
+            var targetContent = document.getElementById(targetSection);
+            targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
-
-        // Faire défiler la page jusqu'à la section cible (sauf si c'est la section "About")
-        var targetContent = document.getElementById(targetSection);
-        targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
