@@ -53,10 +53,7 @@
           <a class="nav-link js-scroll-trigger" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Other Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link js-scroll-trigger" id="OtherTab" href="#interests">Other Interests</a>
         </li>
       </ul>
     </div>
@@ -294,7 +291,7 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests" style="display: none;">
       <div class="w-100">
         <h2 class="mb-5"> <span style="color: #ffffff">Other Interests </span> </h2> 
         
@@ -332,6 +329,21 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+
+  <script>
+    // Utilisez JavaScript pour gérer l'affichage du contenu lorsque l'onglet "CV" est cliqué
+    document.getElementById('OtherTab').addEventListener('click', function () {
+      // Récupérez la div avec l'identifiant "cvContent"
+      var cvContent = document.getElementById('interests');
+      // Si la div est actuellement masquée, affichez-la
+      if (cvContent.style.display === 'none') {
+        cvContent.style.display = 'block';
+      } else {
+        // Sinon, masquez-la
+        cvContent.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 
