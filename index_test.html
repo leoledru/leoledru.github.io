@@ -2,128 +2,244 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
   <title>Resume - Léo Ledru</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-</head>
+  <link href="css/resume.min.css" rel="stylesheet">
 
-<body>
+  <!-- Specific properties for list -->
+  <style>
+    ul {
+        list-style: disc;
+        padding: 1px;
+    }
+
+    li {
+        margin-bottom: 20px; /* Ajustez la valeur selon l'espace vertical souhaité */
+    }
+</style>
+
+</head>
+<!-- Background -->
+
+<body id="page-top" ; style="background-color:#0e1418;">
   <!-- Navigation bars-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand" href="#about">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">Léo Ledru</span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="Images/profil.jpg" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2 custom-size" src="Images/photo_profil.jpg" alt="">
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-target="#skills" href="#skills">Skills</a>
+          <a class="nav-link js-scroll-trigger" href="index.html#skills">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-target="#publications" href="#publications">Publications</a>
+          <a class="nav-link js-scroll-trigger" href="index.html#publications">Publications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-target="#experience" href="#experience">Experience</a>
+          <a class="nav-link js-scroll-trigger" href="index.html#oral_com">Talks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-target="#education" href="#education">Education</a>
+          <a class="nav-link js-scroll-trigger" href="index.html#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-target="#interests" href="#interests">Other Interests</a>
+          <a class="nav-link js-scroll-trigger" href="index.html#interests">Other Interests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="index_test.html">Mountain archives</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="container-fluid">
+  <div class="container-fluid p-0">
     <!-- Head -->
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0"><span style="color: #ffffff">Léo </span><span class="text-primary">Ledru</span></h1>
-        <div class="subheading mb-5">73000, Chambéry, France <a href="mailto:leo.ledru@univ-smb.fr">ledru.leo@hotmail.fr</a></div>
-        <p class="lead mb-5">I have a PhD in biodiversity, ecology and environment from the Alpine Ecology Laboratory <a href="https://leca.osug.fr/">(LECA)</a>.
-          My research interest is theoretical ecology, and in particular, I try to investigate how eco-evolutionary dynamics organize ecosystems
-          using mathematical and numerical models. I'm particularly interested in the theory of multi-level selection, which represents a concept underlying
-          my thesis works.
-          I am now considering either continuing my career in academic research with a Post-Doctorate, or diversifying my experience with a job as a modelling engineer.
-          Indeed, I appreciate both theoretical issues and modelling techniques.
-        </p>
-      </div>
+        <h1 class="mb-0"> <span style="color: #ffffff">Mountain </span>
+          <span class="text-primary">Memories</span>
+        </h1>
     </section>
 
-    <!-- Skills -->
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills" style="display: none;">
-      <div class="w-100">
-        <h2 class="mb-5"><span style="color: #ffffff">Skills </span></h2>
-
-        <div class="subheading mb-3"><span style="color: #ffffff">Programming Languages &amp; Tools </span></div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Matlab
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Python
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            R
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Blender
-          </li>
-        </ul>
-
-        <div class="subheading mb-3"><span style="color: #ffffff">Mathematical modelling </span></div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Dynamical Systems Analysis (ODE, PDE)
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Spatially Explicit Individual Based Models
-          </li>
-        </ul>
-
-        <div class="subheading mb-3"><span style="color: #ffffff">Communication </span></div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Writing of scientific articles
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Scientific conference
-          </li>
-        </ul>
-
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="archives">
+      <div class="columns-container d-flex">
+          <div class="column-left"> <!-- left colonne : liste de courses -->
+              <ul>
+                  <li><font color="#3c6ae5"><b>Grands Moulins </b></font>Couloir Nord 5.1, <i>Solo</i></li>
+                  <li><font color="#3c6ae5"><b>Grand Miceau </b></font>Couloir Sud-Ouest 5.1, <i>Hugo et Félix</i></li>
+                  <li><font color="#3c6ae5"><b>Grand Bagna </b></font>Couloir Nord 5.1, <i>Maelann et Félix</i></li>
+                  <li><font color="#3c6ae5"><b>Pic du Frêne </b></font>Face Nord 5.1, <i>Ben, Anne, Rémi, Hugo et Christophe et Félix</i></li>
+                  <li><font color="#3c6ae5"><b>Grand Crozet </b></font>Face Nord 5.1, <i>Idem, même journée</i></li>
+                  <li><font color="#3c6ae5"><b>Grand Charnier d'Allevard </b></font>Face Nord 5.2, <i>Rémi, Hugo, Noël et Félix</i></li>
+                  <li><font color="#3c6ae5"><b>Crête de la Marmottane </b></font>Couloir Nord, 5.2, <i>Solo</i></li>
+                  <li><font color="#3c6ae5"><b>Pointe Mathews </b></font>Face Sud-Ouest 5.2, <i>Ben</i></li>
+                  <li><font color="#3c6ae5"><b>Grande Casse </b></font>Face Nord Centrale 5.2, <i>Solo</i></li>
+                  <li><font color="#3c6ae5"><b>Pic de l'Étendard </b></font>Écharpe Nord 5.4, <i>Ben et Anne</i></li>
+                  <li><font color="#3c6ae5"><b>Albaron </b></font>Face Nord-Est 5.1, <i>El-manu</i></li>
+                  <li><font color="#3c6ae5"><b>Roche Faurio </b></font>Col Nord 5.1, <i>Hugo et Félix</i></li>
+                  <li><font color="#3c6ae5"><b>Grande Casse </b></font> Couloir Nord-Ouest 5.2, <i>Rémi</i></li>
+                  <li><font color="#3c6ae5"><b>Petit Armet </b></font>Couloir Ouest 5.2, <i>Seb <font color="#f19191">Février 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Crête du Mouchillon </b></font>Couloir Oriental 5.3, <i>Seb <font color="#f19191">Février 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Armet </b></font>Couloir en S 5.3, <i>Max, Paul et Pierre <font color="#f19191">Février 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Trélod </b></font>Face Est 5.4, <i>Seb <font color="#f19191">Février 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Étale </b></font>Face Nord-Ouest 5.4, <i>Seb <font color="#f19191">Février 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pic de la Grande Valloire </b></font>Couloir Nord-Ouest 5.2, <i>Pierre et Paul <font color="#f19191">Mars 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pécloz </b></font>Deprofundis 5.3, <i>Seb et Max <font color="#f19191">Mars 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Petite Lance de Domène </b></font>Face Nord 5.4, <i>Seb, Paul et Hugo <font color="#f19191">Avril 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Pic de Belledonne </b></font>Face Est 5.4, <i>Paul <font color="#f19191">Avril 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Mont Pourri </b></font>Face Sud Directe 5.4, <i>Seb, Paul et El-manu <font color="#f19191">Avril 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Ailefroide </b></font>Glacier Long 5.1, <i>Hugo, Ben et Anne <font color="#f19191">Avril 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Mont Maudit </b></font>Face Est 5.4, <i>Seb <font color="#f19191">Avril 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille Blanche de Peuterey </b></font>Face Est 5.4, <i>Seb et Paul <font color="#f19191">Mai 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Trilogie du Pelvoux : Col Est, Col Ouest, Pente Centrale </b></font>Face Est 5.4, <i>Seb et Paul <font color="#f19191">Mai 2018, Première pour l'enchainement et l'itinéraire du Col Ouest</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pointe de l'Échelle </b></font>Face Est 5.2, <i>Paul  <font color="#f19191">Décembre 2018</font></i></li>
+                  <li><font color="#3c6ae5"><b>Rocher d'Arguille </b></font>Couloir Sud-Ouest, 5.2 <i>Seb <font color="#f19191">Janvier 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Blonnière </b></font>Face Est La Gorge, 5.4 <i>Paul <font color="#f19191">Janvier 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Revard </b></font>Couloir du Téléphérique, 5.1 <i>Seb et Paul <font color="#f19191">Février 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Dent de Rosanaz </b></font>Face Nord, 5.2 <i>Seb et Hugo <font color="#f19191">Février 2019, Intégrale à ski en sautant les rappels</font></i></li>
+                  <li><font color="#3c6ae5"><b>Tournette </b></font>Couloir Face Nord du Varo Rive Droite, 5.4 <i>Paul <font color="#f19191">Février 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Bec d'Arguille <a href="https://skitour.fr/topos/7193">[TOPO]</a> </b></font>Face Nord, 5.3 <i>Paul et Ben <font color="#f19191">Février 2019, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Bec </b></font>Face Ouest Voie Gromier, 5.2 <i>Hugo, Paul et Antoine <font color="#f19191">Février 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pointe de la Vuzelle </b></font>Face Nord, 5.4 <i>Paul <font color="#f19191">Février 2019, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille de Bérangère </b></font>Face Nord-Ouest, 5.3 <i>Paul et Max <font color="#f19191">Mars 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grande Lance de Domène </b></font>Faces Nord-Est et Nord-Ouest, 5.3 <i>Seb <font color="#f19191">Mars 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille d'Arves Centrale </b></font>Face Sud, 5.3 <i>Paul <font color="#f19191">Mars 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grande Casse </b></font>Face Sud, 5.4(5.3) <i>Seb, Lucas, Hugo <font color="#f19191">Avril 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Pic de Belledonne <a href="https://skitour.fr/topos/8166">[TOPO]</a> </b></font>Arête Nord-Est, 5.4 <i>Paul, Max et Kévin <font color="#f19191">Avril 2019, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pointe de Charbonnel <a href="https://skitour.fr/topos/8187">[TOPO]</a> </b></font>Face Nord Voie du Sérac, 5.2 <i>Paul, Max, Lucas et Ben <font color="#f19191">Mai 2019, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille de Bionassay </b></font>Face Sud-Ouest, NON-SKIÉE <i>Paul, Lucas et Seb <font color="#f19191">Mai 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Mont Blanc </b></font>Face Ouest Couloir Saudan Intégral, 5.4 <i>Antoine et Flo <font color="#f19191">Juin 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille d'Arves Septentrionale </b></font>Couloir du Miaou Est, 5.1 <i>Paul, Max, Maelann <font color="#f19191">Décembre 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille d'Arves Méridionale <a href="https://skitour.fr/topos/8254">[TOPO]</a> </b></font>Rideau Est-Nord-Est, 5.4 <i>Paul et Max <font color="#f19191">Décembre 2019, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Dent Parachée </b></font>Face Est, 5.3 <i>Paul et Gaël <font color="#f19191">Décembre 2019</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pic de Neige Cordier </b></font>Couloir Est, 5.3 <i>Paul, Hugo, Ben <font color="#f19191">Janvier 2020</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Pic de la Lauzière </b></font>Face Est, 5.3 <i>Seb et Maelann <font color="#f19191">Janvier 2020</font></i></li>
+                  <li><font color="#3c6ae5"><b>Aiguille d'Arves Méridionale <a href="https://skitour.fr/topos/8723">[TOPO]</a> </b></font>Face Est Gare à la Purge, 5.4 <i>Antoine <font color="#f19191">Février 2020, Première, et 1ère répétition avec Seb et Max Janvier 2023</font></i></li>
+                  <li><font color="#3c6ae5"><b>Tournette </b></font>Face Nord du Varo enchaînement Voss Joss et Couloir Central, 5.5 & 5.3 <i>Paul, Max et Antoine <font color="#f19191">Février 2020</font></i></li>
+                  <li><font color="#3c6ae5"><b>Rocher Badon </b></font>Arête Nord-Ouest, 5.3 <i>Paul et Max <font color="#f19191">Février 2020, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Bec </b></font>Arête Ouest, 5.3 <i>Lucas et Paul <font color="#f19191">Mars 2020, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grande Glière </b></font>Col Nord, 5.2 <i>Seb <font color="#f19191">Mars 2020</font></i></li>
+                  <li><font color="#3c6ae5"><b>Grand Paradis </b></font>Face Est, 5.3 <i>Seb et Max <font color="#f19191">Juin 2020</font></i></li>
+                  <li><font color="#3c6ae5"><b>Mont Blanc </b></font>Face Ouest Directe Beneditti, 5.3 <i>Seb, Lucas, Max, Gaëtan <font color="#f19191">Juin 2020</font></i></li>
+                  <li><font color="#3c6ae5"><b>Moulin Lambert </b></font>Face Nord, 5.3 <i>Paul et Ben <font color="#f19191">Février 2021, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pic de la Grande Valloire <a href="https://skitour.fr/topos/8462">[TOPO]</a> </b></font>Face Ouest, 5.3 <i>Antoine et Kévin <font color="#f19191">Février 2021, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Petit Crozet </b></font>Face Ouest, 5.1 <i>Ben et Maëlann <font color="#f19191">Février 2021, Première</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pointe de Ronce </b></font>Face Sud, 5.1 <i>Solo <font color="#f19191">Mars 2021</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pointe des Bufettes </b></font>Face Sud-Ouest, 5.3 <i>Solo <font color="#f19191">Mars 2021</font></i></li>
+                  <li><font color="#3c6ae5"><b>Dom Jean-Maurice </b></font>Face Nord, 5.4 <i>Max <font color="#f19191">Avril 2021</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pointe de Charbonnel </b></font>Face Ouest, 5.2 <i>Max et Lucas <font color="#f19191">Avril 2021</font></i></li>
+                  <li><font color="#3c6ae5"><b>Frêne, Crozet, Miceau </b></font>Trilogie du Bens, 5.2 <i>Ben <font color="#f19191">Avril 2021</font></i></li>
+                  <li><font color="#3c6ae5"><b>Pic du Montcalm </b></font>Face Nord par les Tables, 5.1 <i>Solo <font color="#f19191">Mai 2022</font></i></li>
+                  <li><font color="#3c6ae5"><b>Mont Turia </b></font>Épaule Nord-Est, 5.2 <i>Pierre et Gaël <font color="#f19191">Avril 2023</font></i></li>
+                  <li><font color="#3c6ae5"><b>Dôme des Nants </b></font>Couloir Ouest-Nord-Ouest, 5.1 <i>Pierre et Gaël <font color="#f19191">Avril 2023</font></i></li>
+              </ul>
+          </div>
+          <div class="column-right">
+            <div class="image-pair">
+              <img src="Images/mont_maudit_face.jpg" alt="" style="width: 100%" />
+              <figcaption class="caption">Mont Maudit, Face Est, la Voie Diagonale</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/beneditti_ascent.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Max et Gaël dans la montée de la Directe Beneditti en Face Ouest du Mont Blanc</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/grand_bec.png" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Sur l'Arête Ouest du Grand Bec</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Charbo_topo.png" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Pointe de Charbonnel, tracé de la Voie du Sérac en Face Nord ouverte avec Ben, Lucas, Paul et Max</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Arves.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Face Est de l'Aiguille d'Arves Méridionale tout en poudre</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Charbo_ouest.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Au retour de la Face Ouest de la Pointe de Charbonnel avec Lucas et Max, les joies du ski de printemps</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Valloire_topo.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Pointe de la Grande Valloire, tracé de la Face Ouest ouverte avec Kévin et Antoine</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/beneditti_lucas.png" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Lucas dans la pente centrale de la Directe Beneditti en Face Ouest du Mont Blanc</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Col_ouest.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Col Ouest du Pelvoux</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Moulin_lambert_topo.png" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Moulin Lambert, tracé de la Face Nord ouverte avec Paul et Ben</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/voie_pop_renfougne.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Voie Pop en Face Est du Trélod, évitement d'un rappel par du ski-renfougne</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/voie_pop_gaz.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">À la montée de la Voie Pop au Trélod</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/goulotte_chocquet.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Crux à l'ouverture du Rideau Est-Nord-Est de l'Aiguille d'Arves Méridionale</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Mériodionale_topo.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Le Rideau Est-Nord-Est (rouge) et Gare à la Purge (vert) sur l'Aiguille d'Arves Méridionale</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/Max_canard.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Near-Death-Experience pour Max, et moi-même en photographe, sur l'Arête Nord-Est du Grand Pic de Belledonne</figcaption>
+            </div>
+            <div class="image-pair" style="margin-bottom: 20px;">
+              <img src="Images/deprofundis.jpg" alt="" style="width: 100%;"/>
+              <figcaption class="caption">Seb, à la montée de Deprofundis, un grand cru des Bauges</figcaption>
+            </div>
+          </div>
       </div>
-    </section>
+  </section>
 
-    <!-- Publications -->
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications" style="display: none;">
-      <div class="w-100">
-        <h2 class="mb-5"><span style="color: #ffffff">Publications </span></h2>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Spatial structure of natural boxwood and the invasive box tree moth can promote coexistence <a href="https://doi.org/10.1016/j.ecolmodel.2021.109844"> Ecological Modelling</a> </h3>
-            <div class="subheading mb-3"><b>Léo Ledru</b>, Jimmy Garnier, Christiane Gallet, Camille Noûs, Sébastien Ibanez</div>
-            <div>In the absence of top-down and bottom-up controls, herbivores eventually drive themselves to extinction by exhausting their host plants. Poorly mobile herbivores may experience only local disappearance because they can recolonize
+
+
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
